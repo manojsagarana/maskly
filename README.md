@@ -1,5 +1,7 @@
 # Maskly
 
+I know it's a little late to publish a project like this, but I actually completed it back in February 2024. Somehow, I forgot to push it to GitHub. Just dug it out of the grave and finally published it! 😅
+
 Maskly is a local-first browser extension that masks sensitive information before it is sent from supported browser-based AI conversations. The AI receives safe placeholders, while the original values remain visible in the page and can be restored in the response.
 
 No Maskly server is required for the browser MVP. Original values and encrypted mappings stay in the browser's extension storage.
