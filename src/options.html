@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Maskly settings</title>
+    <style>
+      body { max-width: 680px; margin: 40px auto; padding: 0 20px; color: #0f172a; font: 15px system-ui, sans-serif; }
+      h1 { margin-bottom: 4px; } p { color: #475569; line-height: 1.5; }
+      fieldset { border: 1px solid #cbd5e1; border-radius: 8px; padding: 14px; }
+      label { display: block; margin: 8px 0; }
+      textarea { width: 100%; min-height: 160px; padding: 10px; border: 1px solid #cbd5e1; border-radius: 8px; font: inherit; }
+      button { margin-top: 12px; padding: 9px 14px; border: 0; border-radius: 7px; color: white; background: #2563eb; cursor: pointer; }
+      #status { min-height: 20px; color: #2563eb; }
+      .warning { color: #92400e; background: #fffbeb; padding: 10px; border-radius: 8px; }
+    </style>
+  </head>
+  <body>
+    <h1>Maskly settings</h1>
+    <p>Choose which categories to mask. Detection and mappings stay inside this browser.</p>
+    <fieldset>
+      <legend>Built-in PII categories</legend>
+      <label><input type="checkbox" data-type="PERSON"> Names in phrases such as “my name is …”</label>
+      <label><input type="checkbox" data-type="EMAIL"> Email addresses</label>
+      <label><input type="checkbox" data-type="PHONE"> Phone numbers</label>
+      <label><input type="checkbox" data-type="CREDIT_CARD"> Credit-card numbers</label>
+      <label><input type="checkbox" data-type="API_KEY"> Common API keys</label>
+      <label><input type="checkbox" data-type="IP_ADDRESS"> IP addresses</label>
+    </fieldset>
+    <p class="warning">Responses are restored for the page UI by default. This is convenient, but the AI website can then see the restored response in its page. Turn this off for strict placeholder-only display.</p>
+    <label><input id="revealResponses" type="checkbox"> Restore placeholders in AI responses</label>
+    <h2>Custom sensitive values</h2>
+    <p>Add one exact value per line, such as an internal project name or customer name.</p>
+    <textarea id="customTerms" placeholder="Project Falcon&#10;Internal customer name&#10;confidential@example.com"></textarea>
+    <br>
+    <button id="save">Save settings</button>
+    <div id="status"></div>
+    <script src="options.js"></script>
+  </body>
+</html>
